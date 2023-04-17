@@ -10,10 +10,11 @@ pool:
   vmImage: ubuntu-latest
 
 steps:
-
+    
 - task: Maven@4
   inputs:
     mavenPomFile: 'pom.xml'
+    goals: 'spring-javaformat:apply package'
     publishJUnitResults: true
     testResultsFiles: '**/surefire-reports/TEST-*.xml'
     javaHomeOption: 'JDKVersion'
