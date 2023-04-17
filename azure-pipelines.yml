@@ -38,6 +38,12 @@ steps:
 - task: Docker@2
   inputs:
     containerRegistry: 'Docker service connection'
-    repository: 'petclinic-azure'
-    command: 'buildAndPush'
+    repository: 'gerardosullivan / petclinic-azure'
+    command: 'build'
     Dockerfile: '**/Dockerfile'
+
+- task: Docker@2
+  inputs:
+    containerRegistry: 'Docker service connection'
+    repository: 'gerardosullivan / petclinic-azure'
+    command: 'push'
