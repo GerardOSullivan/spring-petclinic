@@ -28,7 +28,6 @@ steps:
     mavenPath: '/usr/share/apache-maven-3.8.8'
     mavenAuthenticateFeed: false
     effectivePomSkip: false
-    sonarQubeRunAnalysis: true
     sqMavenPluginVersionChoice: 'pom'
     
 - task: SonarCloudPublish@1
