@@ -16,6 +16,9 @@ steps:
     SonarCloud: 'SonarCloud'
     organization: 'gerardosullivan'
     scannerMode: 'Other'
+    extraProperties: |
+      -Dsonar.projectKey=org.springframework.samples:spring-petclinic \
+      -Dsonar.organization=gerardosullivan \
 - task: Maven@4
   inputs:
     mavenPomFile: 'pom.xml'
