@@ -37,6 +37,7 @@ steps:
         -Dsonar.projectKey=sonar.projecKey \
         -Dsonar.organization=gerardosullivan \
         -Dsonar.host.url=https://sonarcloud.io/ \
+        -Dsonar.branch.name=main \
         -Dsonar.login=6e447d541174964bde8aefb9d45416fd13b36a28
 
 - task: SonarCloudPublish@1
