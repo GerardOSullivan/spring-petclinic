@@ -48,9 +48,4 @@ steps:
     repository: 'gerardosullivan / petclinic-azure'
     command: 'push'
 
-- task: Docker@2
-  inputs:
-    containerRegistry: 'Docker service connection'
-    command: 'start'
-    container: 'gerardosullivan / petclinic-azure'
 
