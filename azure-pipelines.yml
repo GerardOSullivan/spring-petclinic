@@ -3,8 +3,14 @@
 # Add steps that build, run tests, deploy, and more:
 # https://aka.ms/yaml
 
+
 trigger:
 - main
+
+variables:
+  buildConfiguration: 'Release'
+  webRepository: 'web'
+  tag: '$(Build.BuildId)'
 
 pool:
   vmImage: ubuntu-latest
@@ -47,4 +53,8 @@ steps:
     repository: 'gerardosullivan / petclinic-azure'
     command: 'push'
 
-
+- task: AzureWebAppContainer@1
+  inputs:
+    appName: $(WebAppName)
+    azureSubscription: 'Azure for Students'
+    imageName: $(RegistryName)/$(webRepository):$(build.buildId)
