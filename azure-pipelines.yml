@@ -30,8 +30,15 @@ steps:
     mavenAuthenticateFeed: false
     effectivePomSkip: false
     sqMavenPluginVersionChoice: 'latest'
+    
+- script: |
+      # Trigger SonarCloud analysis
+      mvn sonar:sonar \
+        -Dsonar.projectKey=sonar.projecKey \
+        -Dsonar.organization=gerardosullivan \
+        -Dsonar.host.url=https://sonarcloud.io/ \
+        -Dsonar.login=6e447d541174964bde8aefb9d45416fd13b36a28
 
-- task: SonarCloudAnalyze@1
 - task: SonarCloudPublish@1
   inputs:
     pollingTimeoutSec: '300'
