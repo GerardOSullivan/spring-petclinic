@@ -7,11 +7,6 @@
 trigger:
 - main
 
-variables:
-  buildConfiguration: 'Release'
-  webRepository: 'web'
-  tag: '$(Build.BuildId)'
-
 pool:
   vmImage: ubuntu-latest
 
@@ -52,9 +47,3 @@ steps:
     containerRegistry: 'Docker service connection'
     repository: 'gerardosullivan / petclinic-azure'
     command: 'push'
-
-- task: AzureWebAppContainer@1
-  inputs:
-    appName: $(WebAppName)
-    azureSubscription: 'Azure for Students(21fb64bd-25d3-4fc3-87ea-12bb7dd76ec9)'
-    imageName: $(RegistryName)/$(webRepository):$(build.buildId)
