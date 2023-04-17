@@ -16,9 +16,7 @@ steps:
     SonarCloud: 'SonarCloud'
     organization: 'gerardosullivan'
     scannerMode: 'Other'
-    extraProperties: |
-      -Dsonar.projectKey=org.springframework.samples:spring-petclinic \
-      -Dsonar.organization=gerardosullivan \
+
 - task: Maven@4
   inputs:
     mavenPomFile: 'pom.xml'
@@ -26,7 +24,8 @@ steps:
     publishJUnitResults: true
     testResultsFiles: '**/surefire-reports/TEST-*.xml'
     javaHomeOption: 'JDKVersion'
-    mavenVersionOption: 'Default'
+    mavenVersionOption: 'Path'
+    mavenPath: '/usr/local/maven'
     mavenAuthenticateFeed: false
     effectivePomSkip: false
     sonarQubeRunAnalysis: true
