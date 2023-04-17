@@ -53,8 +53,3 @@ steps:
     repository: 'gerardosullivan / petclinic-azure'
     command: 'push'
 
-- task: AzureWebAppContainer@1
-  inputs:
-    appName: $(WebAppName)
-    azureSubscription: 'Azure for Students'
-    imageName: $(RegistryName)/$(webRepository):$(build.buildId)
