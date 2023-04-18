@@ -42,9 +42,11 @@ steps:
     repository: 'gerardosullivan / petclinic-azure'
     command: 'build'
     Dockerfile: '**/Dockerfile'
+    tags: 'latest'
 
 - task: Docker@2
   inputs:
     containerRegistry: 'Docker service connection'
     repository: 'gerardosullivan / petclinic-azure'
     command: 'push'
+    tags: 'latest'
