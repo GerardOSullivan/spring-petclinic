@@ -13,6 +13,7 @@ pool:
 steps:
 
 - task: SonarCloudPrepare@1
+  displayName: 'Configure SonarCloud'
   inputs:
     SonarCloud: 'SonarCloud'
     organization: 'gerardosullivan'
@@ -23,6 +24,7 @@ steps:
 
 
 - task: Maven@4
+  displayName: 'Build and test Pet-Clinic with Maven'
   inputs:
     mavenPomFile: 'pom.xml'
     goals: 'spring-javaformat:apply package'
@@ -36,11 +38,13 @@ steps:
     sqMavenPluginVersionChoice: 'pom'
     
 - task: SonarCloudPublish@1
+  displayName: 'Publish results to SonarCloud'
   inputs:
     pollingTimeoutSec: '300'
     
 
 - task: Docker@2
+  displayName: 'Build Docker Image'
   inputs:
     containerRegistry: 'Docker service connection'
     repository: 'gerardosullivan / petclinic-azure'
@@ -50,6 +54,7 @@ steps:
     tags: 'latest'
 
 - task: Docker@2
+  displayName: 'Push Docker Image to DockerHub'
   inputs:
     containerRegistry: 'Docker service connection'
     repository: 'gerardosullivan / petclinic-azure'
