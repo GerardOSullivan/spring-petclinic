@@ -223,6 +223,7 @@
           </generateGitPropertiesFilename>
           <failOnNoGitDirectory>false</failOnNoGitDirectory>
           <failOnUnableToExtractRepoInfo>false</failOnUnableToExtractRepoInfo>
+          <finalName>spring-petclinic-${buildNumber}</finalName>
         </configuration>
       </plugin>
 
