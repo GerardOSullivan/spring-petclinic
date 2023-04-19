@@ -27,7 +27,7 @@ steps:
   displayName: 'Build and test Pet-Clinic with Maven'
   inputs:
     mavenPomFile: 'pom.xml'
-    goals: 'spring-javaformat:apply package'
+    goals: 'spring-javaformat:apply package -DbuildNumber=$(Build.BuildNumber)'
     publishJUnitResults: true
     testResultsFiles: '**/surefire-reports/TEST-*.xml'
     javaHomeOption: 'JDKVersion'
