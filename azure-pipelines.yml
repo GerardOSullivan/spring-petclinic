@@ -46,6 +46,7 @@ steps:
     repository: 'gerardosullivan / petclinic-azure'
     command: 'build'
     Dockerfile: '**/Dockerfile'
+    arguments: '--build-arg BUILD_NUMBER=$(Build.BuildNumber)'
     tags: 'latest'
 
 - task: Docker@2
