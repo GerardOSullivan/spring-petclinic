@@ -13,6 +13,7 @@ pool:
 steps:
 
 - script: pwd
+- script: ls
 - task: SonarCloudPrepare@1
   displayName: 'Configure SonarCloud'
   inputs:
